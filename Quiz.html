@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel ="stylesheet" href="Acueil.css">
+   
+      <script language="javascript">
+        function afficherResultats(quiz) {
+            var score = 0;
+            var reponsesCorrectes = ['Je préfère discuter calmement pour résoudre les problèmes', 'Modéré, avec des hauts et des bas', 'Sortir avec des amis', 'La modération en tout', '2022', 'Soulaymen', 'Bleu', '36', '6', "A l'université" , "En recherchant le soutien de proches" , "La planification est la clé du succès"];
+            var resultatTexte = "Vos réponses correctes : \n";
+            for (var i = 1; i <= 12; i++) {
+                var questionName = i.toString();
+                var selectedOption = quiz.querySelector('input[name="' + questionName + '"]:checked');
+                if (selectedOption) {
+                    resultatTexte += "Question " + i + ": Vous avez choisi " + selectedOption.value + ". ";
+                    if (selectedOption.value === reponsesCorrectes[i - 1]) {
+                        resultatTexte += "C'est correct!\n";
+                        score++;
+                    } else {
+                        resultatTexte += "La réponse correcte est " + reponsesCorrectes[i - 1] + ".\n";
+                    }
+                }
+            }
+            resultatTexte += "\nVotre score est " + score;
+            alert(resultatTexte);
+        }
+    </script>
+    
+</head>
+<body>
+    <header> 
+        <nav class="nav-style">
+            <br> 
+            &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; 
+            <a href="Accueil.html"> Accueil  </a>   &nbsp;&nbsp;&nbsp;
+            <a href="../DSHtml/Accueil.html#Par"> Parcours acédemiques  </a>   &nbsp;&nbsp;&nbsp; 
+          
+          <a href="Competence.html"> Compétences  </a>   &nbsp;&nbsp;&nbsp; 
+          <a href="Stages.html"> Stages </a>    &nbsp;&nbsp;&nbsp;
+         
+          <a href="Contact.html"> Contacter moi  </a>   &nbsp;&nbsp;&nbsp;
+          <a href="Quiz.html"> Quizz </a>  &nbsp;&nbsp;&nbsp;
+        </nav> <br/> <br/>
+    </header>
+    
+    <main>
+        <h1 class="quizh1"> Un Petit Quiz ... </h1> 
+        <h4> 
+            Découvrez-moi à travers ce quiz varié qui explore mon caractère, mes passions, ma vie quotidienne et mes routines. Mettez-vous au défi en répondant à des questions diverses qui vous permettront de mieux comprendre qui je suis.</h4>
+         
+            
+            <form name="quiz" >
+                <table >
+                <tr>
+                    <td class="quiz">
+                        <p id="question"> 1. Comment gérez-moi  les conflits avec d'autres personnes ?</p>
+                        <input type="radio" name="1" value="Je m'énerve facilement et peux exprimer ma colère" id="Je m'énerve facilement et peux exprimer ma colère"><label for="Je m'énerve facilement et peux exprimer ma colère"> Je m'énerve facilement et peux exprimer ma colère.</label><br>
+                        <input type="radio" name="1" value="Je préfère discuter calmement pour résoudre les problèmes" id="Je préfère discuter calmement pour résoudre les problèmes"><label for="Je préfère discuter calmement pour résoudre les problèmes"> Je préfère discuter calmement pour résoudre les problèmes. </label><br>
+                        <input type="radio" name="1" value="J'évite les conflits autant que possible" id="J'évite les conflits autant que possible"><label for="J'évite les conflits autant que possible"> J'évite les conflits autant que possible.
+                        </label><br>
+                        <p id="question"> 2. Comment puis-je décrire mon niveau d'énergie habituel?</p>
+                        <input type="radio" name="2" value="Très énergique et actif" id="Très énergique et actif"><label for="Très énergique et actif">Très énergique et actif.</label><br>
+                        <input type="radio" name="2" value="Plutôt calme et réservé" id="Plutôt calme et réservé"><label for="Plutôt calme et réservé">Plutôt calme et réservé.</label><br>
+                        <input type="radio" name="2" value="Modéré, avec des hauts et des bas" id="Modéré, avec des hauts et des bas"><label for="Modéré, avec des hauts et des bas">Modéré, avec des hauts et des bas.</label><br>
+                        <p id="question">3 .Quelle activité préfère-moi  pendant mon temps libre ? </p>
+                        <input type="radio" name="3" value="Sortir avec des amis" id="Sortir avec des amis"><label for="Sortir avec des amis">Sortir avec des amis </label><br>
+                        <input type="radio" name="3" value="Profiter d'un bon livre" id="Profiter d'un bon livre"><label for="Profiter d'un bon livre">Profiter d'un bon livre</label><br>
+                        <input type="radio" name="3" value="Passer du temps seule dans un endroit tranquille" id="Passer du temps seule dans un endroit tranquille"><label for="Passer du temps seule dans un endroit tranquille">Passer du temps seule dans un endroit tranquille.</label><br>
+                        <p id="question">4. Quelle phrase décrit le mieux la philosophie de vie de moi ?</p>
+                        <input type="radio" name="4" value="Vivre l'instant présent" id="Vivre l'instant présent"><label for="Vivre l'instant présent">Vivre l'instant présent.</label><br>
+                        <input type="radio" name="4" value="La modération en tout" id="La modération en tout"><label for="La modération en tout">La modération en tout</label><br>
+                        <input type="radio" name="4" value="Mieux vaut prévenir que guérir" id="Mieux vaut prévenir que guérir"><label for="Mieux vaut prévenir que guérir">Mieux vaut prévenir que guérir.</label><br>
+                    </td>
+                    <td class="quiz">
+                        <p id="question">1. Quelle est l’année la plus difficile  pour moi ?</p>
+                        <input type="radio" name="5" value="2023" id="2023"><label for="2023">2023</label><br>
+                        <input type="radio" name="5" value="2022" id="2022"><label for="2022">2022</label><br>
+                        <input type="radio" name="5" value="2021" id="2021"><label for="2021">2021</label><br>
+                        
+                        <p id="question">2. Quel est le nom de mon fils ? </p>
+                        <input type="radio" name="6" value="Salim" id="Salim"><label for="7">Salim </label><br>
+                        <input type="radio" name="6" value="Soulaymen" id="Soulaymen"><label for="Soulaymen">Soulaymen </label><br>
+                        <input type="radio" name="6" value="Sami" id="Sami"><label for="Sami">Sami</label><br>
+                        <p id="question">3. Quelle est ma couleur préférée ? </p>
+                        <input type="radio" name="7" value="Bleu" id="Bleu"><label for="Bleu">Bleu </label><br>
+                        <input type="radio" name="7" value="Rose" id="Rose"><label for="Rose">Rose </label><br>
+                        <input type="radio" name="7" value="Jaune" id="Jaune"><label for="Jaune">Jaune </label><br>
+                        <p id="question"> 4. Combien porter dans les chaussures </p>
+                        <input type="radio" name="8" value="36" id="36"><label for="36">36</label><br>
+                        <input type="radio" name="8" value="37" id="37"><label for="37">37</label><br>
+                        <input type="radio" name="8" value="38" id="38"><label for="38">38</label><br>
+                    </td>
+                    <td class="quiz">
+                        <p id="question">1. À quelle heure je me réveille tous les jours ? </p>
+                        <input type="radio" name="9" value="5" id="5"><label for="5">5</label><br>
+                        <input type="radio" name="9" value="7" id="7"><label for="7">7</label><br>
+                        <input type="radio" name="9" value="6" id="6"><label for="6">6</label><br>
+                        <p id="question">2. Où je passe la plupart de mon temps?</p>
+                        <input type="radio" name="10" value="Dans la maison" id="Dans la maison"><label for="Dans la maison">Dans la maison </label><br>
+                        <input type="radio" name="10" value="Dans la rue" id="Dans la rue"><label for="Dans la rue">Dans la rue  </label><br>
+                        <input type="radio" name="10" value="A l'université " id="A l'université "><label for="A l'université ">A l'université </label><br>
+                        <p id="question">3. Comment moi gère habituellement le stress quotidien ?</p>
+                        <input type="radio" name="11" value="En recherchant le soutien de proches" id="En recherchant le soutien de proches"><label for="En recherchant le soutien de proches">En recherchant le soutien de proches.</label><br>
+                        <input type="radio" name="11" value="En prenant du temps seule pour se détendre" id="En prenant du temps seule pour se détendre"><label for="En prenant du temps seule pour se détendre">En prenant du temps seule pour se détendre.</label><br>
+                        <input type="radio" name="11" value="En abordant les sources de stress de manière organisée" id="En abordant les sources de stress de manière organisée"><label for="En abordant les sources de stress de manière organisée">En abordant les sources de stress de manière organisée </label><br>
+                        <p id="question">4. Quelle phrase décrit le mieux la philosophie de vie <br/> de moi en ce qui concerne la vie quotidienne ?</p>
+                        <input type="radio" name="12" value="La vie est une fête à partager" id="La vie est une fête à partager"><label for="La vie est une fête à partager">La vie est une fête à partager</label><br>
+                        <input type="radio" name="12" value="La solitude est source de paix intérieure" id="La solitude est source de paix intérieure"><label for="La solitude est source de paix intérieure">La solitude est source de paix intérieure</label><br>
+                        <input type="radio" name="12" value="La planification est la clé du succès" id="La planification est la clé du succès"><label for="La planification est la clé du succès">La planification est la clé du succès</label><br>
+                    </td>
+                </tr> 
+                
+           
+            
+        </table>
+        <input class="boutton" id="boutton" type="button" name="boutton" value="ENVOYER LES REPONSES" onclick="afficherResultats(quiz)"> 
+     </form>
+    </main>
+   
+  
+    </body>
+</html>
